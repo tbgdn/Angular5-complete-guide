@@ -1,0 +1,1 @@
+This contains the code that I develop while watching Angular 5 - Complete Guide video course from safaribooksonline.com
