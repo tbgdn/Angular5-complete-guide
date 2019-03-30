@@ -1,7 +1,6 @@
-# Angular 5 - Complete Guide
+# Ch01
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
-It contains the code that I develop while watching the Angular 5 - Complete Guide video course from safaribooksonline.com
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
 ## Development server
 
