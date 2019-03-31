@@ -1,3 +1,10 @@
 <div>
-  <h3>Server Component</h3>
+  <h3>Server Component: {{serverId}}</h3>
+  <p [ngStyle]="{
+    'background-color': getColor(),
+    'padding': '8px',
+    'color': 'white'}">Status:
+    <span [ngClass]="{badge: true,
+    'badge-success': serverStatus === 'online',
+    'badge-danger': serverStatus === 'offline'}">{{serverStatus}}</span></p>
 </div>
