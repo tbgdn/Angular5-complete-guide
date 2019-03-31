@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    {{element.name}}
+  </div>
+  <div class="card-body">
+    <p *ngIf="element.type === 'blueprint'" class="text-primary">
+      <em>{{element.content}}</em>
+    </p>
+    <p *ngIf="element.type === 'server'" class="text-danger">
+      <strong>{{element.content}}</strong>
+    </p>
+  </div>
+</div>
