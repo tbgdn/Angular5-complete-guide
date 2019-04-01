@@ -1,3 +1,11 @@
-<p>
-  recipe-item works!
-</p>
+<a href="#" (click)="onSelect()" class="list-group-item list-group-item-action">
+  <div class="media">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{recipe.name}}</h5>
+      <p>
+        {{recipe.description}}
+      </p>
+    </div>
+    <img width="128" height="128" [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-thumbnail"/>
+  </div>
+</a>
