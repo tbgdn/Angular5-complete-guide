@@ -2,9 +2,13 @@
   <div class="col-xs-12 col-md-8 col-md-offset-2">
     <h5>{{ account.name }}</h5>
     <hr>
-    <p>This account is {{ account.status }}</p>
-    <button class="btn btn-default" (click)="onSetTo('active')">Set to 'active'</button>
-    <button class="btn btn-default" (click)="onSetTo('inactive')">Set to 'inactive'</button>
-    <button class="btn btn-default" (click)="onSetTo('unknown')">Set to 'unknown'</button>
+    <p>This account is <span [ngClass]="{
+      'text-success': account.status === 'active',
+      'text-danger': account.status === 'inactive',
+      'text-warning': account.status === 'unknown'
+    }">{{ account.status }}</span></p>
+    <button class="btn btn-success" (click)="onSetTo('active')">Set to 'active'</button>
+    <button class="btn btn-danger ml-1" (click)="onSetTo('inactive')">Set to 'inactive'</button>
+    <button class="btn btn-warning ml-1" (click)="onSetTo('unknown')">Set to 'unknown'</button>
   </div>
 </div>
