@@ -9,7 +9,6 @@
     <div class="list-group">
       <app-recipe-item *ngFor="let recipeItem of recipes"
                        [recipe]="recipeItem"
-                       (selected)="onRecipeSelected(recipeItem)"
       >
       </app-recipe-item>
     </div>
