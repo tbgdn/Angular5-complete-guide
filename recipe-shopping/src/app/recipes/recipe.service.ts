@@ -5,7 +5,6 @@ import {ShoppingListService} from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-  recipeSelected = new EventEmitter<Recipe>();
   constructor(private shoppingListService: ShoppingListService) {}
   private recipes: Recipe[] = [
     new Recipe('Pizza', 'This is how we make the dough...',
