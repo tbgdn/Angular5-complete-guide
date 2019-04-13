@@ -1,4 +1,6 @@
-<a href="#" (click)="onSelect()" class="list-group-item list-group-item-action">
+<a [routerLink]="[index]"
+   routerLinkActive="active"
+   class="list-group-item list-group-item-action">
   <div class="media">
     <div class="media-body">
       <h5 class="mt-0 mb-1">{{recipe.name}}</h5>
