@@ -4,7 +4,7 @@ import {TemplateDrivenComponent} from './template-driven/template-driven.compone
 import {ReactiveDrivenComponent} from './reactive-driven/reactive-driven.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'template-driven', pathMatch: 'full'},
+  { path: '', redirectTo: 'reactive-driven', pathMatch: 'full'},
   { path: 'template-driven', component: TemplateDrivenComponent },
   { path: 'reactive-driven', component: ReactiveDrivenComponent }
 ];

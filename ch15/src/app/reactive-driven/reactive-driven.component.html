@@ -1,3 +1,50 @@
-<p>
-  reactive-driven works!
-</p>
+<form [formGroup]="signupForm">
+  <div formGroupName="userData">
+    <div class="form-group">
+      <label for="usernameInput">Username</label>
+      <input type="text"
+             formControlName="username"
+             class="form-control"
+             id="usernameInput"
+             aria-describedby="usernameHelp"
+             placeholder="Enter username">
+      <p *ngIf="signupForm.get('userData.username').invalid && signupForm.get('userData.username').touched" class="text-muted form-text">
+        <small *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']"
+               class="form-text text-muted">
+          This username is forbidden.
+        </small>
+        <small *ngIf="signupForm.get('userData.username').errors['required']"
+               class="form-text text-muted">
+          This field is required.
+        </small>
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="emailInput">Mail</label>
+      <input type="email"
+             formControlName="email"
+             class="form-control"
+             id="emailInput"
+             aria-describedby="emailHelp"
+             placeholder="Enter email">
+      <small *ngIf="signupForm.get('userData.email').invalid && signupForm.get('userData.email').touched"
+             class="form-text text-muted">Please enter a valid email
+      </small>
+    </div>
+  </div>
+  <div formArrayName="hobbies">
+    <h4>Hobbies</h4>
+    <button class="btn btn-outline-primary" (click)="onAddHobby()">Add hobby</button>
+    <div class="form-group" *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+      <input type="text" class="form-control" [formControlName]="i"/>
+    </div>
+  </div>
+  <div class="form-check" *ngFor="let gender of genders">
+    <input type="radio"
+           formControlName="gender"
+           id="{{gender + '_input'}}"
+           [value]="gender">
+    <label for="{{gender + '_input'}}">{{gender}}</label>
+  </div>
+  <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+</form>
